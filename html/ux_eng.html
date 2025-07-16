@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UX Design – Anniken Olsen Hammerstad</title>
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/script.js" type="module"></script>
+<script src="../js/ux.js" type="module"></script>
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col">
+
+<header class="fixed w-full bg-white/80 dark:bg-gray-800/90 backdrop-blur shadow-sm z-50">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="/index.html" class="text-lg font-bold text-[#f6b6c6] dark:text-[#f6b6c6]">Anniken Olsen Hammerstad</a>
+    <nav class="space-x-4 text-sm md:text-base flex items-center">
+      <a href="/html/ux_eng.html" class="font-semibold text-[#f6b6c6] dark:text-[#f6b6c6]">UX Design</a>
+      <a href="/html/frontend_eng.html" class="text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">Frontend</a>
+      <span class="text-gray-400 dark:text-gray-500">|</span>
+      <div class="flex items-center gap-1">
+        <a href="ux.html" class="text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">Norwegian</a>
+        <span class="text-gray-400 dark:text-gray-500">/</span>
+        <a href="ux-en.html" class="font-semibold text-[#f6b6c6] dark:text-[#f6b6c6]">English</a>
+      </div>
+      <button id="theme-toggle" class="ml-4 text-lg text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">🌙</button>
+    </nav>
+  </div>
+</header>
+
+<main class="flex-grow">
+
+<section class="relative px-4 py-36 bg-gradient-to-br from-pink-50 via-white to-pink-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-950 text-center">
+  <div class="max-w-4xl mx-auto space-y-4">
+    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
+      UX Design – <span class="text-[#f6b6c6]">with the user at heart</span>
+    </h1>
+    <p class="mt-4 text-xl text-gray-700 dark:text-gray-300">
+      I create digital experiences that are intuitive, inclusive, and meaningful – with a process that combines insight, strategy, design, and testing.
+    </p>
+  </div>
+</section>
+
+<section class="py-20 px-4 bg-gray-50 dark:bg-gray-950 section-fade">
+  <h2 class="text-3xl font-bold text-center mb-12">My Process</h2>
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
+      <div class="text-4xl mb-2">🔍</div>
+      <h3 class="font-semibold mb-1">Research</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Interviews, observations, and analysis to understand user needs and context.</p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
+      <div class="text-4xl mb-2">📝</div>
+      <h3 class="font-semibold mb-1">Concept</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Mapping user journeys and structuring content to create a logical experience.</p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
+      <div class="text-4xl mb-2">🎨</div>
+      <h3 class="font-semibold mb-1">Prototyping</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Wireframes and interactive prototypes in Figma to test ideas early.</p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
+      <div class="text-4xl mb-2">✅</div>
+      <h3 class="font-semibold mb-1">Testing</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Iteration and user testing to ensure quality and usability.</p>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 px-4 section-fade">
+  <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center mb-20 group" id="luunara-card">
+    <div>
+      <video muted playsinline class="rounded-xl shadow" id="luunara-video">
+        <source src="../videos/luunara-demo.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+    </div>
+    <div>
+      <h3 class="text-2xl font-bold mb-4">Luunara</h3>
+      <p class="text-gray-600 dark:text-gray-300 mb-4">
+        A brand and website focusing on strategy and aesthetics. I developed both the concept and visual identity with a user-centered approach.
+      </p>
+      <a href="https://luunara.netlify.app/" target="_blank" rel="noopener" class="text-[#f6b6c6] hover:underline">View project →</a>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse mb-20 group" id="lawara-card">
+    <div>
+      <video muted playsinline class="rounded-xl shadow" id="lawara-video">
+        <source src="../videos/lawara-demo.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+    </div>
+    <div>
+      <h3 class="text-2xl font-bold mb-4">Lawara Wellness</h3>
+      <p class="text-gray-600 dark:text-gray-300 mb-4">
+        A rich blog with intuitive navigation and good structure, developed with focus on a harmonious and accessible user experience.
+      </p>
+      <a href="https://lawarawellness.netlify.app/index.html" target="_blank" rel="noopener" class="text-[#f6b6c6] hover:underline">View project →</a>
+    </div>
+  </div>
+
+  <div id="auctionhouse-card" class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <video muted playsinline class="rounded-xl shadow" id="auctionhouse-video">
+      <source src="../videos/auction_house-demo.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+    <div>
+      <h3 class="text-2xl font-bold mb-4">Auction House</h3>
+      <p class="text-gray-600 dark:text-gray-300 mb-4">
+        A responsive auction platform with high usability and appealing design – built for a seamless bidding experience.
+      </p>
+      <a href="https://auctionhous-e.netlify.app/index.html" target="_blank" rel="noopener" class="text-[#f6b6c6] hover:underline">View project →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="text-center text-xs text-gray-500 dark:text-gray-400 py-4 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+  <div class="flex justify-center gap-6 mb-1">
+    <a href="https://www.linkedin.com/in/anniken-olsen-hammerstad-511145370/" target="_blank" class="hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">LinkedIn</a>
+    <a href="https://github.com/ankiiin" target="_blank" class="hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">GitHub</a>
+    <a href="mailto:annikenhammerstad@hotmail.com" class="hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">Email</a>
+  </div>
+  <p class="mt-2">© 2025 Anniken Olsen Hammerstad. Feel free to get in touch!</p>
+</footer>
+
+</body>
+</html>

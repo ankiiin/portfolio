@@ -16,22 +16,41 @@
     📄 Last ned CV
 </a>
 
+<!-- Navbar -->
 <header class="fixed w-full bg-white/80 dark:bg-gray-800/90 backdrop-blur shadow-sm z-50">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-    <a href="../index.html" class="text-lg font-bold text-[#f6b6c6] dark:text-[#f6b6c6]">Anniken Olsen Hammerstad</a>
-    <nav class="space-x-4 text-sm md:text-base flex items-center">
-      <a href="ux.html" class="font-semibold text-[#f6b6c6] dark:text-[#f6b6c6]">UX-design</a>
-      <a href="frontend.html" class="text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">Frontend</a>
-      <span class="text-gray-400 dark:text-gray-500">|</span>
-      <div class="flex items-center gap-1">
-        <a href="ux.html" class="font-semibold text-[#f6b6c6] dark:text-[#f6b6c6]">Norsk</a>
-        <span class="text-gray-400 dark:text-gray-500">/</span>
-        <a href="ux_eng.html" class="text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">English</a>
+    <div class="w-full max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="../index.html" class="text-lg font-bold text-[#f6b6c6] dark:text-[#f6b6c6]">
+        Anniken Olsen Hammerstad
+      </a>
+      <!-- Desktop-nav -->
+      <nav class="space-x-4 text-sm md:text-base hidden md:flex items-center">
+        <a href="ux.html" class="text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">UX-design</a>
+        <a href="frontend.html" class="text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">Frontend</a>
+        <span class="text-gray-400 dark:text-gray-500">|</span>
+        <div class="flex items-center gap-1">
+          <a href="ux.html" class="font-semibold text-[#f6b6c6] dark:text-[#f6b6c6]">Norsk</a>
+          <span class="text-gray-400 dark:text-gray-500">/</span>
+          <a href="ux_eng.html" class="text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">English</a>
+        </div>
+        <button id="theme-toggle" class="ml-4 text-lg text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">🌙</button>
+      </nav>
+  
+      <!-- Hamburger icon -->
+    <button id="hamburger-btn" class="md:hidden text-2xl text-gray-900 dark:text-gray-100">☰</button>
+</div>
+  
+    <!-- Mobilmeny -->
+    <div id="mobile-menu" class="hidden absolute right-4 top-16 w-auto flex-col bg-white dark:bg-gray-800 shadow-md p-4 space-y-2 text-left rounded-md md:hidden z-50">
+      <a href="ux.html" class="block hover:text-[#f6b6c6]">UX-design</a>
+      <a href="frontend.html" class="block hover:text-[#f6b6c6]">Frontend</a>
+      <div class="flex justify-center gap-2">
+        <a href="ux.html" class="font-semibold text-[#f6b6c6]">Norsk</a>
+        <span class="text-gray-400">/</span>
+        <a href="ux_eng.html" class="hover:text-[#f6b6c6]">English</a>
       </div>
-      <button id="theme-toggle" class="ml-4 text-lg text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">🌙</button>
-    </nav>
-  </div>
-</header>
+      <button id="theme-toggle-mobile" class="text-lg text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6]">🌙</button>
+    </div>
+  </header>
 
 <main class="flex-grow">
 

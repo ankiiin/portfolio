@@ -1,220 +1,374 @@
 <!DOCTYPE html>
 <html lang="no">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frontend Development – Anniken Olsen Hammerstad</title>
-<link rel="stylesheet" href="../css/style.css">
-<script src="../js/script.js" type="module"></script>
-<script src="../js/frontend.js" type="module"></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Development – Anniken Olsen Hammerstad</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/script.js" type="module"></script>
+    <script src="../js/frontend.js" type="module"></script>
+  </head>
 
-<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col">
+  <body
+    class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col"
+  >
+    <div
+      id="progress-bar"
+      class="fixed top-0 left-0 h-1 bg-[#f6b6c6] w-0 z-50"
+    ></div>
 
-<!-- Progress bar -->
-<div id="progress-bar" class="fixed top-0 left-0 h-1 bg-[#f6b6c6] w-0 z-50"></div>
+    <a
+      href="../pdf/cv_annikenhammerstad.pdf"
+      target="_blank"
+      class="fixed bottom-4 right-4 bg-[#f6b6c6] text-white px-4 py-2 rounded-full shadow hover:shadow-md transition"
+    >
+      📄 Last ned CV
+    </a>
 
-<!-- Sticky CV button -->
-<a href="../pdf/cv_annikenhammerstad.pdf" target="_blank" class="fixed bottom-4 right-4 bg-[#f6b6c6] text-white px-4 py-2 rounded-full shadow hover:shadow-md transition">
-    📄 Last ned CV
-</a>
+    <header
+      class="fixed w-full bg-white/80 dark:bg-gray-800/90 backdrop-blur shadow-sm z-50"
+    >
+      <div
+        class="w-full max-w-6xl mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a
+          href="../index.html"
+          class="text-lg font-bold text-[#f6b6c6] dark:text-[#f6b6c6]"
+        >
+          Anniken Olsen Hammerstad
+        </a>
+        <nav class="space-x-4 text-sm md:text-base hidden md:flex items-center">
+          <a
+            href="ux.html"
+            class="text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+            >UX-design</a
+          >
+          <a
+            href="frontend.html"
+            class="text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+            >Frontend</a
+          >
+          <span class="text-gray-400 dark:text-gray-500">|</span>
+          <div class="flex items-center gap-1">
+            <a
+              href="frontend.html"
+              class="lang-no font-semibold text-[#f6b6c6] dark:text-[#f6b6c6]"
+              >Norsk</a
+            >
+            <span class="text-gray-400 dark:text-gray-500">/</span>
+            <a
+              href="frontend_eng.html"
+              class="lang-en text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+              >English</a
+            >
+          </div>
+          <button
+            id="theme-toggle"
+            class="ml-4 text-lg text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+          >
+            🌙
+          </button>
+        </nav>
 
-<!-- Navbar -->
-<header class="fixed w-full bg-white/80 dark:bg-gray-800/90 backdrop-blur shadow-sm z-50">
-    <div class="w-full max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="../index.html" class="text-lg font-bold text-[#f6b6c6] dark:text-[#f6b6c6]">
-        Anniken Olsen Hammerstad
-      </a>
-      <!-- Desktop-nav -->
-      <nav class="space-x-4 text-sm md:text-base hidden md:flex items-center">
-        <a href="ux.html" class="text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">UX-design</a>
-        <a href="frontend.html" class="text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">Frontend</a>
-        <span class="text-gray-400 dark:text-gray-500">|</span>
-        <div class="flex items-center gap-1">
-            <a href="frontend.html" class="lang-no font-semibold text-[#f6b6c6] dark:text-[#f6b6c6]">Norsk</a>
-          <span class="text-gray-400 dark:text-gray-500">/</span>
-          <a href="frontend_eng.html" class="lang-en text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">English</a>
+        <button
+          id="hamburger-btn"
+          class="md:hidden text-2xl text-gray-900 dark:text-gray-100"
+        >
+          ☰
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden absolute right-4 top-16 w-auto flex-col bg-white dark:bg-gray-800 shadow-md p-4 space-y-2 text-left rounded-md md:hidden z-50"
+      >
+        <a href="ux.html" class="block hover:text-[#f6b6c6]">UX-design</a>
+        <a href="frontend.html" class="block hover:text-[#f6b6c6]">Frontend</a>
+        <div class="flex justify-center gap-2">
+          <a
+            href="frontend.html"
+            class="lang-no font-semibold text-[#f6b6c6] dark:text-[#f6b6c6]"
+            >Norsk</a
+          >
+          <span class="text-gray-400">/</span>
+          <a
+            href="frontend_eng.html"
+            class="lang-en text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+            >English</a
+          >
         </div>
-        <button id="theme-toggle" class="ml-4 text-lg text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">🌙</button>
-      </nav>
-  
-      <!-- Hamburger icon -->
-    <button id="hamburger-btn" class="md:hidden text-2xl text-gray-900 dark:text-gray-100">☰</button>
-</div>
-  
-    <!-- Mobilmeny -->
-    <div id="mobile-menu" class="hidden absolute right-4 top-16 w-auto flex-col bg-white dark:bg-gray-800 shadow-md p-4 space-y-2 text-left rounded-md md:hidden z-50">
-      <a href="ux.html" class="block hover:text-[#f6b6c6]">UX-design</a>
-      <a href="frontend.html" class="block hover:text-[#f6b6c6]">Frontend</a>
-      <div class="flex justify-center gap-2">
-        <a href="frontend.html" class="lang-no font-semibold text-[#f6b6c6] dark:text-[#f6b6c6]">Norsk</a>
-        <span class="text-gray-400">/</span>
-        <a href="frontend_eng.html" class="lang-en text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">English</a>
+        <button
+          id="theme-toggle-mobile"
+          class="text-lg text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6]"
+        >
+          🌙
+        </button>
       </div>
-      <button id="theme-toggle-mobile" class="text-lg text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6]">🌙</button>
-    </div>
-  </header>
+    </header>
 
-<main class="flex-grow">
-
-<section class="relative px-4 py-36 bg-gradient-to-br from-pink-50 via-white to-pink-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-950 text-center">
-  <div class="max-w-4xl mx-auto space-y-4">
-    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
-      Frontend-utvikling – <span id="typewriter" class="text-[#f6b6c6]">som leverer</span>
-    </h1>
-    <p class="mt-4 text-xl text-gray-700 dark:text-gray-300">
-      Jeg bygger robuste, responsive og tilgjengelige løsninger – med kode som begeistrer både brukere og utviklere.
-    </p>
-  </div>
-</section>
-
-<section class="py-20 px-4 bg-gray-50 dark:bg-gray-950 section-fade">
-  <h2 class="text-3xl font-bold text-center mb-12">Hvordan jeg bygger frontend</h2>
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
-      <div class="text-4xl mb-2">📱</div>
-      <h3 class="font-semibold mb-1">Responsivt & tilgjengelig</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-300">Universell utforming og mobile-first som standard.</p>
-    </div>
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
-      <div class="text-4xl mb-2">⚙️</div>
-      <h3 class="font-semibold mb-1">Moderne stack</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-300">React, TailwindCSS, Typescript eller Vanilla JS.</p>
-    </div>
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
-      <div class="text-4xl mb-2">🚀</div>
-      <h3 class="font-semibold mb-1">Optimalisert ytelse</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-300">Raske lastetider, SEO og 100 på Lighthouse.</p>
-    </div>
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
-      <div class="text-4xl mb-2">🧩</div>
-      <h3 class="font-semibold mb-1">Komponentdrevet</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-300">Designsystemer og gjenbrukbare komponenter.</p>
-    </div>
-  </div>
-</section>
-
-<section class="py-20 px-4 section-fade">
-    <h2 class="text-3xl font-bold text-center mb-12">Utvalgte prosjekter</h2>
-  
-    <!-- Luunara -->
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center mb-20 group video-card">
-      <div>
-        <video muted playsinline class="rounded-xl shadow">
-          <source src="../videos/luunara-demo.mp4" type="video/mp4">
-          Din nettleser støtter ikke video.
-        </video>
-      </div>
-      <div>
-        <h3 class="text-2xl font-bold mb-4">Luunara</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-2">Stack: Vanilla JS, TailwindCSS, API, Netlify, Supabase</p>
-        <p class="text-gray-600 dark:text-gray-300 mb-2">Optimalisert for ytelse og universell utforming.</p>
-        <a href="https://luunara.netlify.app/" target="_blank" rel="noopener" class="text-[#f6b6c6] hover:underline">Se prosjektet →</a>
-        <div>
-        <span class="text-gray-500 dark:text-gray-400 text-sm">
-          Kildekode er ikke tilgjengelig grunnet rettighetsbeskyttelse
-        </span>
-      </div>
-      </div>
-    </div>
-  
-    <!-- Lawara -->
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse mb-20 group video-card">
-      <div>
-        <video muted playsinline class="rounded-xl shadow">
-          <source src="../videos/lawara-demo.mp4" type="video/mp4">
-          Din nettleser støtter ikke video.
-        </video>
-      </div>
-      <div>
-        <h3 class="text-2xl font-bold mb-4">Lawara Wellness</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-2">Stack: Vanilla JS, CSS, API, Netlify</p>
-        <p class="text-gray-600 dark:text-gray-300 mb-2">Høy struktur og enkel navigasjon.</p>
-        <a href="https://lawarawellness.netlify.app/index.html" target="_blank" rel="noopener" class="text-[#f6b6c6] hover:underline">Se prosjektet →</a>
-        <div>
-        <a href="https://github.com/ankiiin/Project-exam-1" target="_blank" rel="noopener" class="text-[#f6b6c6] hover:underline">Se koden på GitHub →</a>
+    <main class="flex-grow">
+      <section
+        class="relative px-4 py-36 bg-gradient-to-br from-pink-50 via-white to-pink-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-950 text-center"
+      >
+        <div class="max-w-4xl mx-auto space-y-4">
+          <h1
+            class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100"
+          >
+            Frontend-utvikling –
+            <span id="typewriter" class="text-[#f6b6c6]">som leverer</span>
+          </h1>
+          <p class="mt-4 text-xl text-gray-700 dark:text-gray-300">
+            Jeg bygger robuste, responsive og tilgjengelige løsninger med fokus
+            på både brukeropplevelse og ryddig kode.
+          </p>
         </div>
-      </div>
-    </div>
-  
-    <!-- Auction House -->
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center group video-card">
-      <div>
-        <video muted playsinline class="rounded-xl shadow">
-          <source src="../videos/auction_house-demo.mp4" type="video/mp4">
-          Din nettleser støtter ikke video.
-        </video>
-      </div>
-      <div>
-        <h3 class="text-2xl font-bold mb-4">Auction House</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-2">Stack: Vanilla JS, API, TailwindCSS</p>
-        <p class="text-gray-600 dark:text-gray-300 mb-2">Responsiv, intuitiv auksjonsplattform.</p>
-        <div class="flex flex-col gap-2">
-          <a href="https://auctionhous-e.netlify.app/index.html" target="_blank" rel="noopener" class="text-[#f6b6c6] hover:underline">Se nettsiden →</a>
-          <a href="https://github.com/ankiiin/auction-house-sp2" target="_blank" rel="noopener" class="text-[#f6b6c6] hover:underline">Se koden på GitHub →</a>
+      </section>
+
+      <section class="py-20 px-4 bg-gray-50 dark:bg-gray-950 section-fade">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Hvordan jeg bygger frontend
+        </h2>
+        <div
+          class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center"
+        >
+          <div
+            class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover"
+          >
+            <div class="text-4xl mb-2">📱</div>
+            <h3 class="font-semibold mb-1">Responsivt & tilgjengelig</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              Universell utforming og mobile-first som standard.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover"
+          >
+            <div class="text-4xl mb-2">⚙️</div>
+            <h3 class="font-semibold mb-1">Moderne stack</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              React, TailwindCSS, Typescript eller Vanilla JS.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover"
+          >
+            <div class="text-4xl mb-2">🚀</div>
+            <h3 class="font-semibold mb-1">Optimalisert ytelse</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              Raske lastetider, SEO og 100 på Lighthouse.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover"
+          >
+            <div class="text-4xl mb-2">🧩</div>
+            <h3 class="font-semibold mb-1">Komponentdrevet</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              Designsystemer og gjenbrukbare komponenter.
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  
-  <section class="py-20 px-4 bg-gray-50 dark:bg-gray-950">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-12">Min stack & verktøy</h2>
-  
-      <div class="relative">
-        <div id="stack-carousel" class="overflow-hidden relative">
-          <div class="flex transition-transform duration-700 ease-in-out">
-            <div class="min-w-full px-4">
-              <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md space-y-4">
-                <div class="text-4xl">⚛️</div>
-                <h3 class="text-xl font-semibold">React & Next.js</h3>
-                <p class="text-gray-600 dark:text-gray-300">Moderne rammeverk for raske, dynamiske apper.</p>
-              </div>
+      </section>
+
+      <section class="py-20 px-4 section-fade">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Utvalgte prosjekter
+        </h2>
+
+        <div class="max-w-6xl mx-auto grid gap-8 md:grid-cols-3">
+          <div
+            class="rounded-xl border border-gray-200 p-6 hover:shadow-lg transition"
+          >
+            <h3 class="text-xl font-bold mb-2">Holidaze</h3>
+            <p class="text-sm text-gray-500 mb-3">Project Exam 2</p>
+
+            <p class="text-gray-600 mb-4">
+              En moderne bookingplattform for overnatting bygget i React, med
+              fokus på brukerflyt, komponentstruktur og tilgjengelighet.
+            </p>
+
+            <p class="text-sm text-gray-500 mb-4">
+              Stack: React, API, CSS Modules, Netlify
+            </p>
+
+            <div class="flex flex-col gap-2">
+              <a
+                href="https://holidaze-pe2-annikenhammerstad.netlify.app/"
+                target="_blank"
+                rel="noopener"
+                class="text-[#f6b6c6] hover:underline"
+              >
+                Se prosjektet →
+              </a>
+              <a
+                href="https://github.com/ankiiin/holidaze-pe2-annikenhammerstad"
+                target="_blank"
+                rel="noopener"
+                class="text-[#f6b6c6] hover:underline"
+              >
+                Se koden →
+              </a>
             </div>
-            <div class="min-w-full px-4">
-              <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md space-y-4">
-                <div class="text-4xl">🎨</div>
-                <h3 class="text-xl font-semibold">TailwindCSS & SCSS</h3>
-                <p class="text-gray-600 dark:text-gray-300">Effektiv styling og vedlikeholdbare designsystemer.</p>
-              </div>
+          </div>
+
+          <div
+            class="rounded-xl border border-gray-200 p-6 hover:shadow-lg transition"
+          >
+            <h3 class="text-xl font-bold mb-2">Auction House</h3>
+            <p class="text-sm text-gray-500 mb-3">Semester Project 2</p>
+            <p class="text-gray-600 mb-4">
+              En responsiv auksjonsplattform med innlogging, budgivning og
+              dynamisk innhold hentet fra API.
+            </p>
+            <p class="text-sm text-gray-500 mb-4">
+              Stack: Vanilla JavaScript, Tailwind CSS, Noroff API
+            </p>
+            <div class="flex flex-col gap-2">
+              <a
+                href="https://auctionhous-e.netlify.app/index.html"
+                target="_blank"
+                class="text-[#f6b6c6] hover:underline"
+              >
+                Se nettsiden →
+              </a>
+              <a
+                href="https://github.com/ankiiin/auction-house-sp2"
+                target="_blank"
+                class="text-[#f6b6c6] hover:underline"
+              >
+                Se koden →
+              </a>
             </div>
-            <div class="min-w-full px-4">
-              <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md space-y-4">
-                <div class="text-4xl">🧪</div>
-                <h3 class="text-xl font-semibold">Testing & QA</h3>
-                <p class="text-gray-600 dark:text-gray-300">Cypress, Vitest og Lighthouse for kvalitetssikring.</p>
-              </div>
-            </div>
-            <div class="min-w-full px-4">
-              <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md space-y-4">
-                <div class="text-4xl">🚀</div>
-                <h3 class="text-xl font-semibold">CI/CD & GitHub</h3>
-                <p class="text-gray-600 dark:text-gray-300">Automatiserte deploys og god workflow.</p>
-              </div>
+          </div>
+
+          <div
+            class="rounded-xl border border-gray-200 p-6 hover:shadow-lg transition"
+          >
+            <h3 class="text-xl font-bold mb-2">Lavara Wellness Blog</h3>
+            <p class="text-sm text-gray-500 mb-3">Project Exam 1</p>
+            <p class="text-gray-600 mb-4">
+              En bloggplattform med fokus på struktur, enkel navigasjon og
+              dynamisk innhold fra API.
+            </p>
+            <p class="text-sm text-gray-500 mb-4">
+              Stack: HTML, CSS, Vanilla JavaScript, Noroff API
+            </p>
+            <div class="flex flex-col gap-2">
+              <a
+                href="https://lawarawellness.netlify.app/index.html"
+                target="_blank"
+                class="text-[#f6b6c6] hover:underline"
+              >
+                Se nettsiden →
+              </a>
+              <a
+                href="https://github.com/ankiiin/Project-exam-1"
+                target="_blank"
+                class="text-[#f6b6c6] hover:underline"
+              >
+                Se koden →
+              </a>
             </div>
           </div>
         </div>
-  
-        <div class="flex justify-center mt-6 space-x-2">
-          <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-700"></button>
-          <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-700"></button>
-          <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-700"></button>
-          <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-700"></button>
+      </section>
+
+      <section class="py-20 px-4 bg-gray-50 dark:bg-gray-950">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-12">Min stack & verktøy</h2>
+
+          <div class="relative">
+            <div id="stack-carousel" class="overflow-hidden relative">
+              <div class="flex transition-transform duration-700 ease-in-out">
+                <div class="min-w-full px-4">
+                  <div
+                    class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md space-y-4"
+                  >
+                    <div class="text-4xl">⚛️</div>
+                    <h3 class="text-xl font-semibold">React & Next.js</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      Moderne rammeverk for raske, dynamiske apper.
+                    </p>
+                  </div>
+                </div>
+                <div class="min-w-full px-4">
+                  <div
+                    class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md space-y-4"
+                  >
+                    <div class="text-4xl">🎨</div>
+                    <h3 class="text-xl font-semibold">TailwindCSS & SCSS</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      Effektiv styling og vedlikeholdbare designsystemer.
+                    </p>
+                  </div>
+                </div>
+                <div class="min-w-full px-4">
+                  <div
+                    class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md space-y-4"
+                  >
+                    <div class="text-4xl">🧪</div>
+                    <h3 class="text-xl font-semibold">Testing & QA</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      Cypress, Vitest og Lighthouse for kvalitetssikring.
+                    </p>
+                  </div>
+                </div>
+                <div class="min-w-full px-4">
+                  <div
+                    class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md space-y-4"
+                  >
+                    <div class="text-4xl">🚀</div>
+                    <h3 class="text-xl font-semibold">CI/CD & GitHub</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      Automatiserte deploys og god workflow.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-center mt-6 space-x-2">
+              <button
+                class="carousel-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-700"
+              ></button>
+              <button
+                class="carousel-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-700"
+              ></button>
+              <button
+                class="carousel-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-700"
+              ></button>
+              <button
+                class="carousel-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-700"
+              ></button>
+            </div>
+          </div>
         </div>
+      </section>
+    </main>
+
+    <footer
+      class="text-center text-xs text-gray-500 dark:text-gray-400 py-4 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+    >
+      <div class="flex justify-center gap-6 mb-1">
+        <a
+          href="https://www.linkedin.com/in/anniken-olsen-hammerstad-511145370/"
+          target="_blank"
+          class="hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+          >LinkedIn</a
+        >
+        <a
+          href="https://github.com/ankiiin"
+          target="_blank"
+          class="hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+          >GitHub</a
+        >
+        <a
+          href="mailto:annikenhammerstad@hotmail.com"
+          class="hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+          >E-post</a
+        >
       </div>
-    </div>
-  </section>
-  
-  </main>
-  
-  <footer class="text-center text-xs text-gray-500 dark:text-gray-400 py-4 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-    <div class="flex justify-center gap-6 mb-1">
-      <a href="https://www.linkedin.com/in/anniken-olsen-hammerstad-511145370/" target="_blank" class="hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">LinkedIn</a>
-      <a href="https://github.com/ankiiin" target="_blank" class="hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">GitHub</a>
-      <a href="mailto:annikenhammerstad@hotmail.com" class="hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]">E-post</a>
-    </div>
-    <p class="mt-2">© 2025 Anniken Olsen Hammerstad. Ta gjerne kontakt!</p>
-  </footer>
-  
+      <p class="mt-2">© 2025 Anniken Olsen Hammerstad. Ta gjerne kontakt!</p>
+    </footer>
   </body>
-  </html>
+</html>

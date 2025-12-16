@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Typewriter
     const textEl = document.getElementById("typewriter");
     const words = ["efficient", "responsive", "modern", "accessible"];
     let wordIndex = 0;
@@ -29,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (textEl) type();
   });
 
-      // Video hover play/pause
       document.querySelectorAll(".video-card").forEach((card) => {
         const video = card.querySelector("video");
         card.addEventListener("mouseenter", () => {

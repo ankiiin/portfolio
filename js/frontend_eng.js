@@ -38,8 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
           video.currentTime = 0;
         });
       });
-    
-      // Stack carousel
+
       const carousel = document.querySelector("#stack-carousel .flex");
       const dots = document.querySelectorAll(".carousel-dot");
       let currentIndex = 0;
@@ -67,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
       showSlide(0);
   
-    // Progress bar scroll
   window.addEventListener("scroll", () => {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollTop = window.scrollY;
@@ -75,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("progress-bar").style.width = progress + "%";
     });
     
-    // Confetti on project click
     document.querySelectorAll(".project-link").forEach(link => {
       link.addEventListener("click", () => {
         confetti({
@@ -86,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
     
-    // Entrance animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -96,7 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.querySelectorAll(".section-fade").forEach(section => observer.observe(section));
     
-    // Fake terminal typing effect
     const terminalOutput = document.getElementById("terminal-output");
     const commands = [
       "> npx create-react-app my-app",

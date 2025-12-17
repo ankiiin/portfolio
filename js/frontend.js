@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Typewriter
     const textEl = document.getElementById("typewriter");
     const words = ["effektiv", "responsiv", "moderne", "tilgjengelig"];
     let wordIndex = 0;
@@ -28,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
     if (textEl) type();
   
-    // Video hover play/pause
     document.querySelectorAll(".video-card").forEach((card) => {
       const video = card.querySelector("video");
       card.addEventListener("mouseenter", () => {
@@ -40,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   
-    // Stack carousel
     const carousel = document.querySelector("#stack-carousel .flex");
     const dots = document.querySelectorAll(".carousel-dot");
     let currentIndex = 0;
@@ -69,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
     showSlide(0);
   });
 
-  // Progress bar scroll
 window.addEventListener("scroll", () => {
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollTop = window.scrollY;
@@ -77,7 +73,6 @@ window.addEventListener("scroll", () => {
     document.getElementById("progress-bar").style.width = progress + "%";
   });
   
-  // Confetti on project click
   document.querySelectorAll(".project-link").forEach(link => {
     link.addEventListener("click", () => {
       confetti({
@@ -87,8 +82,7 @@ window.addEventListener("scroll", () => {
       });
     });
   });
-  
-  // Entrance animations
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -98,7 +92,6 @@ window.addEventListener("scroll", () => {
   });
   document.querySelectorAll(".section-fade").forEach(section => observer.observe(section));
   
-  // Fake terminal typing effect
   const terminalOutput = document.getElementById("terminal-output");
   const commands = [
     "> npx create-react-app my-app",

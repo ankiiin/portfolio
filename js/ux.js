@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   
-    // Auto-slide
     setInterval(nextSlide, 4000);
   
     updateCarousel();

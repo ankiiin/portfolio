@@ -4,7 +4,6 @@ const toggleBtnMobile = document.getElementById("theme-toggle-mobile");
 const hamburgerBtn = document.getElementById("hamburger-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 
-// 🌙 DARK/LIGHT THEME
 function setTheme(theme) {
   if (theme === "dark") {
     html.classList.add("dark");
@@ -19,7 +18,6 @@ function setTheme(theme) {
   }
 }
 
-// Initial load
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark" || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   setTheme("dark");
@@ -27,7 +25,6 @@ if (savedTheme === "dark" || (!savedTheme && window.matchMedia('(prefers-color-s
   setTheme("light");
 }
 
-// Toggle click
 toggleBtn?.addEventListener("click", () => {
   html.classList.contains("dark") ? setTheme("light") : setTheme("dark");
 });
@@ -35,14 +32,12 @@ toggleBtnMobile?.addEventListener("click", () => {
   html.classList.contains("dark") ? setTheme("light") : setTheme("dark");
 });
 
-// 🍔 HAMBURGER MENU
 hamburgerBtn?.addEventListener("click", () => {
   if (mobileMenu) {
     mobileMenu.classList.toggle("hidden");
   }
 });
 
-// 📹 VIDEO HOVER
 document.addEventListener("DOMContentLoaded", () => {
   const cards = [
     { cardId: "luunara-card", videoId: "luunara-video" },
@@ -66,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// 🌐 LANGUAGE
 document.addEventListener("DOMContentLoaded", () => {
   const langNoLink = document.querySelector(".lang-no");
   const langEnLink = document.querySelector(".lang-en");

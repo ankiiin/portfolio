@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lavara Wellness Blog – Project Exam 1</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/script.js" type="module"></script>
+  </head>
+
+  <body
+    class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 min-h-screen flex flex-col"
+  >
+    <header
+      class="fixed w-full bg-white/80 dark:bg-gray-800/90 backdrop-blur shadow-sm z-50"
+    >
+      <div
+        class="w-full max-w-6xl mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a
+          href="../index_eng.html"
+          class="text-lg font-bold text-[#f6b6c6] dark:text-[#f6b6c6]"
+        >
+          Anniken Olsen Hammerstad
+        </a>
+        <nav class="space-x-4 text-sm md:text-base hidden md:flex items-center">
+          <a
+            href="../ux_eng.html"
+            class="text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+            >UX-design</a
+          >
+          <a
+            href="../frontend_eng.html"
+            class="text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+            >Frontend</a
+          >
+          <span class="text-gray-400 dark:text-gray-500">|</span>
+          <div class="flex items-center gap-1">
+            <a
+              href="../frontend_eng.html"
+              class="lang-no font-semibold text-[#f6b6c6] dark:text-[#f6b6c6]"
+              >Norsk</a
+            >
+            <span class="text-gray-400 dark:text-gray-500">/</span>
+            <a
+              href="../frontend_eng.html"
+              class="lang-en text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+              >English</a
+            >
+          </div>
+          <button
+            id="theme-toggle"
+            class="ml-4 text-lg text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+          >
+            🌙
+          </button>
+        </nav>
+
+        <button
+          id="hamburger-btn"
+          class="md:hidden text-2xl text-gray-900 dark:text-gray-100"
+        >
+          ☰
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden absolute right-4 top-16 w-auto flex-col bg-white dark:bg-gray-800 shadow-md p-4 space-y-2 text-left rounded-md md:hidden z-50"
+      >
+        <a href="../ux_eng.html" class="block hover:text-[#f6b6c6]">UX-design</a>
+        <a href="../frontend_eng.html" class="block hover:text-[#f6b6c6]"
+          >Frontend</a
+        >
+        <div class="flex justify-center gap-2">
+          <a
+            href="../frontend_eng.html"
+            class="lang-no font-semibold text-[#f6b6c6] dark:text-[#f6b6c6]"
+            >Norsk</a
+          >
+          <span class="text-gray-400">/</span>
+          <a
+            href="../frontend_eng.html"
+            class="lang-en text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+            >English</a
+          >
+        </div>
+        <button
+          id="theme-toggle-mobile"
+          class="text-lg text-gray-900 dark:text-gray-200 hover:text-[#f6b6c6]"
+        >
+          🌙
+        </button>
+      </div>
+    </header>
+
+    <main
+      class="flex-grow max-w-3xl mx-auto px-4 pb-20 w-full"
+      style="padding-top: 9rem;"
+    >
+      <div class="mb-12">
+        <h1 class="text-4xl font-bold mb-2">Lavara Wellness Blog</h1>
+        <p class="text-sm text-gray-500">Project Exam 1</p>
+      </div>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-semibold mb-2">About the project</h2>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+          Lavara Wellness Blog is a content-focused blog platform centered around
+          calm visual design, readability, and easy access to wellness-related
+          articles.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-semibold mb-2">My role</h2>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+          UX structure, visual design decisions, content hierarchy, and frontend
+          development with an emphasis on clarity and consistency.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-semibold mb-2">Key reflections</h2>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+          Looking back, the project could be further improved by enhancing
+          filtering options and refining feedback states for user interactions.
+          These are natural areas for iteration based on user needs and scale.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mb-3">Links</h2>
+        <div class="flex flex-col gap-2">
+          <a
+            href="https://lawarawellness.netlify.app/index.html"
+            target="_blank"
+            class="text-[#f6b6c6] hover:underline"
+          >
+            View live site →
+          </a>
+          <a
+            href="https://github.com/ankiiin/Project-exam-1"
+            target="_blank"
+            class="text-[#f6b6c6] hover:underline"
+          >
+            View repository →
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="text-center text-xs text-gray-500 dark:text-gray-400 py-4 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+    >
+      <div class="flex justify-center gap-6 mb-1">
+        <a
+          href="https://www.linkedin.com/in/anniken-olsen-hammerstad-511145370/"
+          target="_blank"
+          class="hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+          >LinkedIn</a
+        >
+        <a
+          href="https://github.com/ankiiin"
+          target="_blank"
+          class="hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+          >GitHub</a
+        >
+        <a
+          href="mailto:annikenhammerstad@hotmail.com"
+          class="hover:text-[#f6b6c6] dark:hover:text-[#f6b6c6]"
+          >Email</a
+        >
+      </div>
+      <p class="mt-2">
+        © 2025 Anniken Olsen Hammerstad. Feel free to get in touch!
+      </p>
+    </footer>
+  </body>
+</html>
